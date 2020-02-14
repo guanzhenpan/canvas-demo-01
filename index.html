@@ -15,7 +15,7 @@
         let ctx =canvas.getContext("2d");
         ctx.fillStyle ="black";
         ctx.strokeStyle ="black";
-        ctx.lineWidth =8;
+        ctx.lineWidth = 8;
         ctx.lineCap ="round";
 
         let painting =false;
@@ -34,14 +34,16 @@
                 drawLine(last[0],last[1],x,y)
                 last =[x,y]
             }
-        }else {
+        }
+        else {
             canvas.onmousedown =(e) =>{
                 painting =true
-                last =[e.clientX,e.clientY]
+                last =[e.clientX, e.clientY]
             }
             canvas.onmousemove =(e) => {
                 if(painting === true){
-                    drawLine(last[0],last(1),e.clientX,e.clientY)
+                    console.log(last)
+                    drawLine(last[0],last[1],e.clientX,e.clientY)
                     last =[e.clientX, e.clientY]
                 }
             }
@@ -55,3 +57,6 @@
                 ctx.lineTo(x1,y2);
                 ctx.stroke();
             }
+    </script>
+    </body>
+    </html>
